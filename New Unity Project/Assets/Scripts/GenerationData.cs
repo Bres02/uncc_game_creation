@@ -13,7 +13,7 @@ namespace randomGeneration
 
         Random random = new Random();
 
-        public void biomeForest() // Preset for the forest biome
+        public int[,] biomeForest() // Preset for the forest biome
         // 0 = Grass Path
         // 1 = Dirt Path
         // 2 = Tree Object
@@ -24,9 +24,10 @@ namespace randomGeneration
             generatePathData(1, 10, 20, 3, 1, 4, 1); // Create Dirt Path
             generatePlaceableData(2, 2); // Create Trees
             generatePlaceableData(1, 3); // Create Bushes
+            return getGenerationData();
         }
 
-        public void biomeCave() // Preset for the cave biome
+        public int[,] biomeCave() // Preset for the cave biome
         // 0 = Stone Path
         // 1 = Torch Object
         // 2 = Stone Object
@@ -40,9 +41,10 @@ namespace randomGeneration
             generatePlaceableData(7, 1); // Create torches
             generatePlaceableData(5, 2); // Create stones
             generatePlaceableData(3, 3); // Create ore
+            return getGenerationData();
         }
 
-        public void biomeBeach() // Preset for the beach biome
+        public int[,] biomeBeach() // Preset for the beach biome
         // 0 = Sand Path
         // 1 = Shallow Water Path
         // 2 = Shell Object
@@ -58,9 +60,10 @@ namespace randomGeneration
             swapDataValue(0, 1); // Place the shallow water back
             swapDataValue(5, 0); // Empty the sand path
             generatePlaceableData(4, 2); // Create Shells on the sand
+            return getGenerationData();
         }
 
-        public void biomeArctic() // Preset for the arctic biome
+        public int[,] biomeArctic() // Preset for the arctic biome
         // 0 = Snow Path
         // 1 = Torch Object
         // 2 = Ice Object
@@ -71,9 +74,10 @@ namespace randomGeneration
             generatePlaceableData(15, 1); // Create torches
             generatePlaceableData(10, 2); // Create ice
             generatePlaceableData(5, 3); // Create stone
+            return getGenerationData();
         }
 
-        public void biomeVolcano() // Preset for the volcano biome
+        public int[,] biomeVolcano() // Preset for the volcano biome
         // 0 = Rock Path
         // 1 = Ash Path
         // 2 = Fire Object
@@ -89,6 +93,7 @@ namespace randomGeneration
             fillEmpty(1); // Place the ash back
             swapDataValue(2, 0); // Empty the rock path
             generatePlaceableData(3, 2); // Create fire in rock path
+            return getGenerationData();
         }
 
         public void displayColor(ConsoleColor c0, ConsoleColor c1, ConsoleColor c2, ConsoleColor c3, ConsoleColor c4) // Displays the data array to the console with color
