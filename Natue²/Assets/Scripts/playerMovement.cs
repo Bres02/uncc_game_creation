@@ -6,7 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Rigidbody2D body;
-    public bool grounded;
+    private bool grounded;
     
     private void Awake()
     {
@@ -17,8 +17,8 @@ public class playerMovement : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(Input.GetAxis("Horizontal")*speed, body.velocity.y);
-       
         
+        //flips the model when direction changes
         if (horizontalInput > 0.01f)
         {
             transform.localScale = new Vector3 ((float)-0.25, (float)0.25, (float)0.25);
@@ -27,13 +27,13 @@ public class playerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3((float)0.25, (float)0.25, (float)0.25);
         }
-
+        // calls the jump function
         if (Input.GetKey(KeyCode.Space) && grounded)
         {
             Jump();
         }
     }
-
+    // controls for player jumping
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, speed);
@@ -42,6 +42,7 @@ public class playerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // makes sure the player is touching the ground
         if (collision.gameObject.tag == "Ground")
         {
             grounded = true;
