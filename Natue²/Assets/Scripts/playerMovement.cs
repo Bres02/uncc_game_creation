@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] public float jumpVelocity;
+    public float jumpVelocity;
     public float upGravity; // gravity when the player is moving up
     public float downGravity; // gravity when the player is moving down
     public float jumpVelocityCutoff; // determines when in the jump the gravity gets stronger
