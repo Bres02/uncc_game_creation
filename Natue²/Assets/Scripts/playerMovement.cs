@@ -5,8 +5,10 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    public float upGravity;
-    public float downGravity;
+    [SerializeField] public float jumpVelocity;
+    public float upGravity; // gravity when the player is moving up
+    public float downGravity; // gravity when the player is moving down
+    public float jumpVelocityCutoff; // determines when in the jump the gravity gets stronger
     private Rigidbody2D body;
     private bool grounded;
     
@@ -36,7 +38,7 @@ public class playerMovement : MonoBehaviour
         }
 
         // changes the player's gravity based on its current vertical velocity
-        if (body.velocity.y > 0)
+        if (body.velocity.y > jumpVelocityCutoff)
         {
             body.gravityScale = upGravity;
         }
@@ -48,7 +50,7 @@ public class playerMovement : MonoBehaviour
     // controls for player jumping
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, speed);
+        body.velocity = new Vector2(body.velocity.x, jumpVelocity);
         grounded = false;
     }
 

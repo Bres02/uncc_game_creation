@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5418359658678568264}
+  - component: {fileID: 1191048821595720725}
   - component: {fileID: 1991486055077589042}
   - component: {fileID: 5545578779102329815}
-  - component: {fileID: 1191048821595720725}
   - component: {fileID: -6455793650949503083}
   m_Layer: 0
   m_Name: 2023_FrogPC.1
@@ -34,6 +34,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191048821595720725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850626375286818532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0db724a5ce6584284e0570511033a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  upGravity: 0
+  downGravity: 0
 --- !u!212 &1991486055077589042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,19 +126,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.6824026, y: 6.0010333}
   m_EdgeRadius: 0
---- !u!114 &1191048821595720725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850626375286818532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a0db724a5ce6584284e0570511033a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!50 &-6455793650949503083
 Rigidbody2D:
   serializedVersion: 4
