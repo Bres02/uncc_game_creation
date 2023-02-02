@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
+    public float upGravity;
+    public float downGravity;
     private Rigidbody2D body;
     private bool grounded;
     
@@ -31,6 +33,16 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && grounded)
         {
             Jump();
+        }
+
+        // changes the player's gravity based on its current vertical velocity
+        if (body.velocity.y > 0)
+        {
+            body.gravityScale = upGravity;
+        }
+        else
+        {
+            body.gravityScale = downGravity;
         }
     }
     // controls for player jumping

@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2023_FrogPC.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1191048821595720725, guid: 198272ed20a191b42bc1dd249fe3dafd, type: 3}
+      propertyPath: upGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191048821595720725, guid: 198272ed20a191b42bc1dd249fe3dafd, type: 3}
+      propertyPath: downGravity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5418359658678568264, guid: 198272ed20a191b42bc1dd249fe3dafd, type: 3}
       propertyPath: m_RootOrder
       value: 1
