@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Apple_Projectile : MonoBehaviour
 {
+    [SerializeField] private GameObject ground;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,12 @@ public class Apple_Projectile : MonoBehaviour
     void Update()
     {
         
+    }
+        private void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.tag == "ground")
+        {
+          Physics.IgnoreCollision(ground.GetComponent<Collider>(), GetComponent<Collider>());
+        }
+
     }
 }

@@ -24,4 +24,6 @@ public class apple_Thrower : MonoBehaviour
     {
         Instantiate(apple, transform.position, Quaternion.identity);// creates the apple
     }
+
+
 }
