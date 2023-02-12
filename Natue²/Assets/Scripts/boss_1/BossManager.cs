@@ -46,6 +46,18 @@ public class BossManager : MonoBehaviour
         bossTimer = 0;
     }
 
+    void FixedUpdate()
+    {
+        bossTimer -= Time.deltaTime;
+        if (bossTimer <= 0)
+        {
+            if (onCooldown) listCounter++;
+            else UseAttack(attackList[listCounter]);
+            onCooldown = !onCooldown;
+            bossTimer += timeList[listCounter];
+        }
+    }
+
     void NextPhase()
     {
         phaseCounter++;
@@ -68,12 +80,8 @@ public class BossManager : MonoBehaviour
         NextPhase();
     }
 
-    void FixedUpdate()
+    void UseAttack(BossAttack attack)
     {
-        bossTimer -= Time.deltaTime;
-        if (bossTimer < 0)
-        {
-
-        }
+        attack.StartAttack();
     }
 }
