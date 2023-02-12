@@ -9,6 +9,11 @@ public class BossManager : MonoBehaviour
     private int currentHealth;
     private int phaseCounter;
     private BossPhase currentPhase;
+    private float bossTimer;
+    private bool onCooldown;
+    private List<BossAttack> attackList = new List<BossAttack>();
+    private List<float> timeList = new List<float>();
+    private int listCounter;
 
     public void Damage(int amount)
     {
@@ -24,6 +29,23 @@ public class BossManager : MonoBehaviour
 
     }
 
+    void InitializeAttackLists(BossPhase phase)
+    {
+        attackList.Clear();
+        timeList.Clear();
+        listCounter = -1;
+        for (int i = 0; i < phase.attacks.Count; i++)
+        {
+            for (int j = 0; j < phase.repetitions[i]; j++)
+            {
+                attackList.Add(phase.attacks[i]);
+                timeList.Add(phase.times[i] / 2);
+            }
+        }
+        onCooldown = true;
+        bossTimer = 0;
+    }
+
     void NextPhase()
     {
         phaseCounter++;
@@ -31,6 +53,7 @@ public class BossManager : MonoBehaviour
         {
             currentPhase = phases[phaseCounter];
             currentHealth = currentPhase.GetHealth();
+            InitializeAttackLists(currentPhase);
         }
         else
         {
@@ -40,12 +63,17 @@ public class BossManager : MonoBehaviour
 
     void Start()
     {
+        bossTimer = 0; 
         phaseCounter = -1;
         NextPhase();
     }
 
     void FixedUpdate()
     {
-        
+        bossTimer -= Time.deltaTime;
+        if (bossTimer < 0)
+        {
+
+        }
     }
 }
