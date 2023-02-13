@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BossAttack : MonoBehaviour
 {
-    public GameObject prefab;
+    //public GameObject prefab;
 
     public abstract void StartAttack();
 }

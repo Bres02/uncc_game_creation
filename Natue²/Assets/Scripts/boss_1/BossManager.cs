@@ -51,8 +51,18 @@ public class BossManager : MonoBehaviour
         bossTimer -= Time.deltaTime;
         if (bossTimer <= 0)
         {
-            if (onCooldown) listCounter++;
-            else UseAttack(attackList[listCounter]);
+            if (onCooldown)
+            {
+                listCounter++;
+                if (listCounter >= attackList.Count)
+                {
+                    listCounter = 0;
+                }
+            }
+            else
+            {
+                UseAttack(attackList[listCounter]);
+            }
             onCooldown = !onCooldown;
             bossTimer += timeList[listCounter];
         }
