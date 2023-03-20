@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1191048821595720725, guid: 198272ed20a191b42bc1dd249fe3dafd, type: 3}
       propertyPath: speed
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1191048821595720725, guid: 198272ed20a191b42bc1dd249fe3dafd, type: 3}
       propertyPath: upGravity
@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 1317071697}
   - component: {fileID: 1317071696}
   - component: {fileID: 1317071695}
+  - component: {fileID: 1317071700}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   attacks:
-  - {fileID: 1317071695}
+  - {fileID: 1317071700}
   times:
   - 4
   repetitions: 01000000
@@ -322,6 +323,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317071700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317071694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7268e134f50329e40b7a743dd860589e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8670906536811998413, guid: 5dd639c638a50594eb6e571fb0cfcdf9, type: 3}
+  height: 4.5
+  minRange: -10
+  maxRange: 10
 --- !u!1 &1448558546
 GameObject:
   m_ObjectHideFlags: 0
